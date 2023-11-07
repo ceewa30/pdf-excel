@@ -18,6 +18,6 @@ for filepath in filepaths:
     with open(filepath, "r") as file:
         content = file.read()
     pdf.set_font(family='Times', size=12)
-    pdf.multi_cell(w=192, h=10, txt = content, align = 'J', fill = False)
+    pdf.multi_cell(w=0, h=6, txt = content, align = 'J', fill = False)
 
 pdf.output('text-pdfs/output.pdf')
