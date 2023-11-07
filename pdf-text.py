@@ -10,17 +10,15 @@ pdf = FPDF(orientation='P', unit='mm', format='A4')
 for filepath in filepaths:
     pdf.add_page()
     filename = Path(filepath).stem
-    print(filename)
+    
     pdf.set_font(family='Times', style='B', size=26)
     pdf.cell(w = 80, h = 20, txt=filename.capitalize(), border = 0, ln = 1, align = 'L', fill = False)
-    f = open(f"TextFiles/{filename}.txt", "r")
+    pdf.line(10, 25, 200, 25)
+
+    f = open(filepath, "r")
     # insert the texts in pdf
     for x in f:
         pdf.set_font(family='Times', size=12)
-        pdf.cell(w=100, h=20, txt = x, ln = 2, align = 'C', fill = False)
-        pdf.ln(10)
-    # save the pdf with name .pdf
-    # pdf.output("mygfg.pdf")   
-    # df = pd.read_fwf(f'TextFiles/{filename}.txt')
-    # print(df)
-pdf.output(f'text-pdfs/{filename}.pdf')
+        pdf.multi_cell(w=192, h=10, txt = x, align = 'J', fill = False)
+
+pdf.output('text-pdfs/output.pdf')
