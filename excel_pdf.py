@@ -16,8 +16,8 @@ for filepath in filepaths:
     pdf.set_font(family='Times', style='B', size=16)
     pdf.cell(w = 80, h = 10, txt=f"Invoice nr. {invoice_nr}", border = 0, ln = 1, align = 'L', fill = False)
 
-    # pdf.set_font(family='Times', style='B', size=16)
-    # pdf.cell(w = 80, h = 10, txt=f"Date: {date}", border = 0, ln = 1, align = 'L', fill = False)
+    pdf.set_font(family='Times', style='B', size=16)
+    pdf.cell(w = 80, h = 10, txt=f"Date: {date}", border = 0, ln = 1, align = 'L', fill = False)
 
     # df = pd.read_excel(filepath, sheet_name='Sheet 1')
 
